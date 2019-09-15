@@ -27,12 +27,12 @@ class Kelas extends REST_Controller
             $this->response([
                 'status' => true,
                 'data' => $kelas
-            ], REST_Controller::HTTP_OK);
+			], REST_Controller::HTTP_OK);
         }else{
             $this->response([
                 'status' => false,
                 'message' => 'id not found'
-            ],REST_Controller::HTTP_NOT_FOUND);
+			],REST_Controller::HTTP_NOT_FOUND);
         }
     }
 
