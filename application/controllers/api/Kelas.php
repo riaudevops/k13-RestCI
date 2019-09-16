@@ -18,7 +18,10 @@ class Kelas extends REST_Controller
     {
         $id = $this->get('id');
         if ( $id === null){
-            $kelas = $this->kelas->getKelas();
+            $this->response([
+                'status' => false,
+                'message' => 'provide any id'
+            ],REST_Controller::HTTP_BAD_REQUEST);
         }else{
             $kelas = $this->kelas->getKelas($id);
         }

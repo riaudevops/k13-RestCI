@@ -11,7 +11,7 @@ class Auth_API_model extends CI_Model
 
 		$password = password_verify($data['password'],$user['password']);
 		if ($user && $password){
-			return $user['api_key'];
+			return $user['id'];
 			// return true;
 		}else{
 			return false;

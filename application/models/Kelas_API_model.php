@@ -2,7 +2,7 @@
 
 class Kelas_API_model extends CI_Model
 {
-    public function getKelas($id = null){
+    public function getKelas($id){
         if ($id === null) {
 			$this->db->select('*');
 			$this->db->from('peg_kelas');
@@ -10,8 +10,17 @@ class Kelas_API_model extends CI_Model
 			$this->db->join('peg_tahun_ajaran', 'peg_tahun_ajaran.id_tahun_ajaran=peg_kelas.id_TA', 'left');
 			return $this->db->get()->result_array();
         }else{
-            return $this->db->get_where('peg_kelas',['id' => $id])->result_array();
+            $this->db->SELECT('*');
+            $this->db->FROM('peg_mengajar');
+            $this->db->JOIN('peg_guru', 'peg_mengajar.user_id = peg_guru.id','left');
+            $this->db->JOIN('peg_kelas', 'peg_mengajar.id_kelas = peg_kelas.id_kelas','left');
+            $this->db->JOIN('peg_mapel', 'peg_mengajar.id_mapel = peg_mapel.id_mapel','left');
+            $this->db->WHERE('user_id ='.$id);
+            return $this->db->get()->result_array();
         }
+
+        // SELECT * FROM `peg_mengajar` LEFT JOIN `peg_guru` ON peg_mengajar.user_id = peg_guru.id LEFT JOIN `peg_kelas` ON  peg_mengajar.id_kelas = peg_kelas.id_kelas LEFT JOIN `peg_mapel` ON peg_mengajar.id_mapel = peg_mapel.id_mapel WHERE user_id = 2
+
     }
 
     public function deleteMahasiswa($id){
