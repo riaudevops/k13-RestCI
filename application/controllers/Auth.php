@@ -3,6 +3,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Auth extends CI_Controller
 {
+
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('Auth_model','AuthModel');
+	}
+
 	public function index()
 	{
 		if ($this->session->userdata('email')) {
@@ -26,14 +33,16 @@ class Auth extends CI_Controller
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
 
-		$user = $this->db->get_where('users', ['name' => $username])->row_array();
+		$user = $this->AuthModel->cekUsername($username);
 
 		// jika usernya ada
 		if ($user) {
 			// jika usernya aktif
 
 			// cek password
-			if (password_verify($password, $user['password'])) {
+//			if (password_verify($password, $user['password'])) {
+			$passwordIsValid = $this->AuthModel->cekPassword($password,$user['password']);
+			if ($passwordIsValid) {
 				$data = [
 					'email' => $user['email']
 				];

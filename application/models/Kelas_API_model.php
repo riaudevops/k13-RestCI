@@ -1,6 +1,6 @@
 <?php
 
-class Kelas_model extends CI_Model
+class Kelas_API_model extends CI_Model
 {
     public function getKelas($id = null){
         if ($id === null) {

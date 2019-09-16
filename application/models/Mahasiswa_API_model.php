@@ -1,6 +1,6 @@
 <?php
 
-class Mahasiswa_model extends CI_Model
+class Mahasiswa_API_model extends CI_Model
 {
     public function getMahasiswa($id = null){
         if ($id === null) {

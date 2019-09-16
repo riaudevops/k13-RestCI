@@ -98,7 +98,7 @@ $config['rest_realm'] = 'REST API';
 
 /*
 |--------------------------------------------------------------------------
-| REST Login
+| REST Auth
 |--------------------------------------------------------------------------
 |
 | Set to specify the REST API requires to be logged in
@@ -114,7 +114,7 @@ $config['rest_auth'] = 'FALSE';
 
 /*
 |--------------------------------------------------------------------------
-| REST Login Source
+| REST Auth Source
 |--------------------------------------------------------------------------
 |
 | Is login required and if so, the user store to use
@@ -143,7 +143,7 @@ $config['strict_api_and_auth'] = FALSE; // force the use of both api and auth be
 
 /*
 |--------------------------------------------------------------------------
-| REST Login Class and Function
+| REST Auth Class and Function
 |--------------------------------------------------------------------------
 |
 | If library authentication is used define the class and function name
@@ -206,7 +206,7 @@ $config['auth_library_function'] = '';
 
 /*
 |--------------------------------------------------------------------------
-| REST Login Usernames
+| REST Auth Usernames
 |--------------------------------------------------------------------------
 |
 | Array of usernames and passwords for login, if ldap is configured this is ignored
@@ -300,7 +300,7 @@ $config['rest_database_group'] = 'default';
 | The table name in your database that stores API keys
 |
 */
-$config['rest_keys_table'] = 'keys';
+$config['rest_keys_table'] = 'api_key';
 
 /*
 |--------------------------------------------------------------------------

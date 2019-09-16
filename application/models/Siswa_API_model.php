@@ -1,6 +1,6 @@
 <?php
 
-class Siswa_model extends CI_Model
+class Siswa_API_model extends CI_Model
 {
     public function getSiswa($id = null){
         if ($id === null) {

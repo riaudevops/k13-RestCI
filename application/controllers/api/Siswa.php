@@ -6,33 +6,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 require APPPATH . 'libraries/REST_Controller.php';
 require APPPATH . 'libraries/Format.php';
 
-class Kelas extends REST_Controller
+class Siswa extends REST_Controller
 {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Kelas_model','kelas');
+        $this->load->model('Siswa_API_model','siswa');
     }
 
     public function index_get()
     {
         $id = $this->get('id');
         if ( $id === null){
-            $kelas = $this->kelas->getKelas();
+            $siswa = $this->siswa->getSiswa();
         }else{
-            $kelas = $this->kelas->getKelas($id);
+            $siswa = $this->siswa->getSiswa($id);
         }
         
-        if($kelas){
+        if($siswa){
             $this->response([
                 'status' => true,
-                'data' => $kelas
-			], REST_Controller::HTTP_OK);
+                'data' => $siswa
+            ], REST_Controller::HTTP_OK);
         }else{
             $this->response([
                 'status' => false,
                 'message' => 'id not found'
-			],REST_Controller::HTTP_NOT_FOUND);
+            ],REST_Controller::HTTP_NOT_FOUND);
         }
     }
 
@@ -76,9 +76,11 @@ class Kelas extends REST_Controller
         $data = [
             'nrp' => $this->post('nrp'),
             'nama' => $this->post('nama'),
+            'email' => $this->post('email'),
+            'jurusan' => $this->post('jurusan')  
         ];
 
-        if($this->kelas->createKelas($data) > 0){
+        if($this->mahasiswa->createMahasiswa($data) > 0){
             $this->response([
                 'status' => true,
                 'message' => 'record created'
@@ -114,6 +116,5 @@ class Kelas extends REST_Controller
         }
     }
 }
-
 
 ?>

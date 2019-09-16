@@ -2,9 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9cbeee4e-ccf5-4352-82c8-dadc4977eb37" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/application/views/auth/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/controllers/api/Auth.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/models/Auth_API_model.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/models/Auth_model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/rest.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/rest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/api/kelas.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/api/Kelas.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/api/mahasiswa.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/api/Mahasiswa.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/api/siswa.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/api/Siswa.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Kelas_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Kelas_API_model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Mahasiswa_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Mahasiswa_API_model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Siswa_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Siswa_API_model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/build/less/login_and_register.less" beforeDir="false" afterPath="$PROJECT_DIR$/assets/build/less/login_and_register.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/dist/css/AdminLTE.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/dist/css/AdminLTE.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/dist/css/alt/AdminLTE-without-plugins.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/dist/css/alt/AdminLTE-without-plugins.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/libraries/Ftp.php" beforeDir="false" afterPath="$PROJECT_DIR$/system/libraries/Ftp.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,7 +27,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -69,6 +84,7 @@
   <component name="ProjectId" id="1Qs5Eqiljm5QPvaU72wB8zfCgfO" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -97,7 +113,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
