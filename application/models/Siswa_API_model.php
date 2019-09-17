@@ -2,26 +2,12 @@
 
 class Siswa_API_model extends CI_Model
 {
-    public function getSiswa($id = null){
-        if ($id === null) {
-            return $this->db->get('siswa')->result_array();
-        }else{
-            return $this->db->get_where('siswa',['id' => $id])->result_array();
-        }
-    }
-
-    public function deleteSiswa($id){
-        $this->db->delete('siswa', ['id' => $id]);
-        return $this->db->affected_rows();
-    }
-
-    public function createSiswa($data){
-        $this->db->insert('siswa',$data);
-        return $this->db->affected_rows();
-    }
-
-    public function updateSiswa($data,$id){
-        $this->db->update('siswa',$data,['id' => $id]);
-        return $this->db->affected_rows();
+    public function getSiswa($id){
+        $this->db->SELECT('NAMA');
+            $this->db->FROM('peg_siswa');
+            $this->db->JOIN('peg_kelas_siswa', 'peg_siswa.id_siswa = peg_kelas_siswa.id_siswa','right');
+            $this->db->JOIN('peg_mengajar', 'peg_mengajar.id_kelas = peg_kelas_siswa.id_kelas','left');
+            $this->db->WHERE('peg_mengajar.user_id ='.$id);
+            return $this->db->get()->result_array();
     }
 }
