@@ -38,6 +38,32 @@ class Kelas extends REST_Controller
 			],REST_Controller::HTTP_NOT_FOUND);
         }
     }
+
+    public function siswa_get()
+    {
+        $id_kelas = $this->get('id');
+        if ($id_kelas === null){
+            $this->response([
+                'status' => false,
+                'message' => 'provide any id'
+            ],REST_Controller::HTTP_BAD_REQUEST);
+        }else{
+            $siswa = $this->kelas->getSiswaKelas($id_kelas);
+        }
+        
+        if($siswa){
+            $this->response([
+                'status' => true,
+                'data' => $siswa
+            ], REST_Controller::HTTP_OK);
+        }else{
+            $this->response([
+                'status' => false,
+                'message' => 'id not found'
+            ],REST_Controller::HTTP_NOT_FOUND);
+        }
+    }
+
 }
 
 

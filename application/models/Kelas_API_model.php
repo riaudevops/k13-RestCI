@@ -11,4 +11,12 @@ class Kelas_API_model extends CI_Model
             $this->db->WHERE('user_id ='.$id);
             return $this->db->get()->result_array();
     }
+
+    public function getSiswaKelas($id_kelas){
+    	$this->db->SELECT('*');
+    	$this->db->FROM('peg_siswa');
+    	$this->db->JOIN('peg_kelas_siswa','peg_siswa.id_siswa = peg_kelas_siswa.id_siswa','left');
+    	$this->db->WHERE('peg_kelas_siswa.id_kelas ='.$id_kelas);
+    	return $this->db->get()->result_array();
+    }
 }
