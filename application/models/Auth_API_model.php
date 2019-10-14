@@ -18,7 +18,6 @@ class Auth_API_model extends CI_Model
 
 		if ($user && $password){
 			return $dataUser;
-			// return true;
 		}else{
 			return false;
 		}

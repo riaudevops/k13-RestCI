@@ -64,7 +64,30 @@ class Kelas extends REST_Controller
         }
     }
 
+    public function detail_get()
+    {
+        $id_kelas = $this->get('id');
+        if ($id_kelas === null){
+            $this->response([
+                'status' => false,
+                'message' => 'provide any id'
+            ],REST_Controller::HTTP_BAD_REQUEST);
+        }else{
+            $kelasDetail = $this->kelas->getKelasDetail($id_kelas);
+        }
+        
+        if($kelasDetail){
+            $this->response([
+                'status' => true,
+                'data' => $kelasDetail
+            ], REST_Controller::HTTP_OK);
+        }else{
+            $this->response([
+                'status' => false,
+                'message' => 'id not found'
+            ],REST_Controller::HTTP_NOT_FOUND);
+        }   
+    }
 }
-
 
 ?>
