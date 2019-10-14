@@ -21,9 +21,9 @@ class Kelas_API_model extends CI_Model
     }
 
     public function getKelasDetail($id_kelas){
-        // $this->db->SELECT('id_walikelas');
+        $this->db->SELECT('peg_kelas.id_kelas');
         $this->db->SELECT('name');
-        // $this->db->SELECT('nama');
+        $this->db->SELECT('id');
         $this->db->FROM('peg_kelas');
         $this->db->JOIN('users','peg_kelas.id_walikelas = users.id','left');
         $this->db->JOIN('peg_kelas_siswa','peg_kelas.id_kelas = peg_kelas_siswa.id_kelas','left');
@@ -32,7 +32,3 @@ class Kelas_API_model extends CI_Model
         return $this->db->get()->result_array();
     }
 }
-
-
-
-// SELECT id_walikelas,name,nama FROM `peg_kelas` LEFT JOIN `users` ON peg_kelas.id_walikelas = users.id LEFT JOIN `peg_kelas_siswa` ON peg_kelas.id_kelas = peg_kelas_siswa.id_kelas LEFT JOIN `peg_siswa` ON peg_kelas_siswa.id_siswa = peg_siswa.id_siswa WHERE peg_kelas.id_kelas = 1
