@@ -23,7 +23,7 @@ class Kelas extends REST_Controller
                 'message' => 'provide any id'
             ],REST_Controller::HTTP_BAD_REQUEST);
         }else{
-            $kelas = $this->kelas->getDataSiswa($id);
+            $kelas = $this->kelas->getKelas($id);
         }
         
         if($kelas){

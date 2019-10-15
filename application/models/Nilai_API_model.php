@@ -1,19 +1,6 @@
 <?php
 
-class Nilai_API_model extends CI_Model
-{
-	public function getDataSiswa($id_siswa){
-		$this->db->SELECT('NIS');
-		$this->db->SELECT('NISN');
-		$this->db->SELECT('NAMA');
-		$data = $this->db->get_where('peg_siswa',
-			[
-				'id_siswa'=>$id_siswa
-			]
-		)->row_array();
-
-		return $data;
-	}
+class Nilai_API_model extends CI_Model {
 
 	public function getTranskrip($data)
 	{
@@ -37,6 +24,46 @@ class Nilai_API_model extends CI_Model
         return $this->db->get()->result_array();
 	}
 
+	public function cekData($data)
+	{
+		$nilaiSiswa = $this->db->get_where('nilai_pengetahuan',
+			[
+			 'id_siswa' => $data['id_siswa'],
+			 'id_mapel' => $data['id_mapel']
+			]
+		);
+		return $nilaiSiswa->num_rows();
+	}
+
+	public function updateNilai($data)
+	{
+		$data = array(
+	        'id_siswa' => $data['id_siswa'],
+	        'id_mapel' => $data['id_mapel'],
+	        'NPH' => $data['NPH'],
+	        'UTS' => $data['UTS'],
+	        'UAS' => $data['UAS'],
+	        'RATA_RATA' => $data['RATA_RATA']
+		);
+
+		$this->db->where('id_siswa', $data['id_siswa']);
+		$this->db->where('id_mapel', $data['id_mapel']);
+		return $this->db->update('nilai_pengetahuan', $data);
+	}
+
+	public function insertNilai($data)
+	{
+		$data = array(
+	        'id_siswa' => $data['id_siswa'],
+	        'id_mapel' => $data['id_mapel'],
+	        'NPH' => $data['NPH'],
+	        'UTS' => $data['UTS'],
+	        'UAS' => $data['UAS'],
+	        'RATA_RATA' => $data['RATA_RATA']
+		);
+
+		return $this->db->insert('nilai_pengetahuan', $data);
+	}
 }
 
 
