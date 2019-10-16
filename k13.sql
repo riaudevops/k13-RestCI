@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 30, 2019 at 09:40 AM
--- Server version: 10.3.16-MariaDB
--- PHP Version: 7.3.6
+-- Generation Time: Oct 16, 2019 at 07:14 PM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -97,10 +97,19 @@ CREATE TABLE `nilai_pengetahuan` (
 --
 
 INSERT INTO `nilai_pengetahuan` (`id_npengetahuan`, `id_siswa`, `id_mapel`, `NPH`, `UTS`, `UAS`, `RATA_RATA`) VALUES
-(1, 1, 1, 90, 90, 90, 90),
-(2, 1, 2, 90, 90, 90, 80),
-(3, 2, 1, 90, 90, 90, 90),
-(4, 1, 3, 80, 80, 80, 80);
+(1, 1, 1, 87, 83, 86, 89),
+(2, 1, 2, 70, 70, 70, 70),
+(3, 2, 1, 87, 81, 89, 90),
+(4, 1, 3, 78, 84, 73, 80),
+(5, 2, 2, 90, 87, 85, 83),
+(8, 4, 1, 20, 40, 30, 20),
+(10, 5, 3, 67, 87, 57, 87),
+(11, 5, 2, 67, 78, 87, 87),
+(12, 5, 1, 76, 56, 76, 84),
+(13, 3, 2, 87, 75, 67, 87),
+(14, 3, 1, 56, 76, 76, 56),
+(20, 10, 1, 11, 11, 11, 11),
+(26, 10, 2, 32, 32, 32, 32);
 
 -- --------------------------------------------------------
 
@@ -245,10 +254,11 @@ CREATE TABLE `peg_kelas_siswa` (
 INSERT INTO `peg_kelas_siswa` (`id_kelas_siswa`, `id_kelas`, `id_siswa`, `deleted_at`, `created_at`, `update_at`) VALUES
 (1, 1, 1, NULL, NULL, NULL),
 (3, 1, 2, NULL, NULL, NULL),
-(4, 1, 4, NULL, NULL, NULL),
+(4, 1, 4, '2019-10-13 11:35:21', NULL, NULL),
 (5, 2, 3, NULL, NULL, NULL),
 (6, 2, 5, NULL, NULL, NULL),
-(7, 2, 10, NULL, NULL, NULL);
+(7, 2, 10, NULL, NULL, NULL),
+(8, 3, 6, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -823,7 +833,7 @@ ALTER TABLE `nilai_keterampilan`
 -- AUTO_INCREMENT for table `nilai_pengetahuan`
 --
 ALTER TABLE `nilai_pengetahuan`
-  MODIFY `id_npengetahuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_npengetahuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `peg_eskul`
@@ -853,7 +863,7 @@ ALTER TABLE `peg_kelas`
 -- AUTO_INCREMENT for table `peg_kelas_siswa`
 --
 ALTER TABLE `peg_kelas_siswa`
-  MODIFY `id_kelas_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_kelas_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `peg_kesehatan`

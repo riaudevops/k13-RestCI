@@ -2,7 +2,7 @@
 
 class Nilai_API_model extends CI_Model {
 
-	public function getTranskrip($data)
+	public function getRekapNilai($data)
 	{
 		$this->db->SELECT('nilai_pengetahuan.id_siswa');
 		$this->db->SELECT('NAMA');

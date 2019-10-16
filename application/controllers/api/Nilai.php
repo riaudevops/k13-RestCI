@@ -30,18 +30,18 @@ class Nilai extends REST_Controller
                 'message' => 'provide any id'
             ],REST_Controller::HTTP_BAD_REQUEST);
         }else{
-            $transkripPdf = $this->nilai->getTranskrip($data);
+            $rekapPdf = $this->nilai->getRekapNilai($data);
         }
         
-        if($transkripPdf){
+        if($rekapPdf){
 
-        	// var_dump($transkripPdf);
+        	// var_dump($rekapPdf);
         	// die();
 
             $this->load->library('pdf');
-        	$this->pdf->setPaper('A4', 'potrait');
-        	$this->pdf->filename = "Transkrip Nilai ".$transkripPdf[0]['MATA_PELAJARAN']." Kelas ".$transkripPdf[0]['nama_kelas'].".pdf";
-        	$this->pdf->load_view('transkrip_pdf',['holder'=>$transkripPdf]);
+        	$this->pdf->setPaper('A4', 'landscape');
+        	$this->pdf->filename = "Rekap Nilai ".$rekapPdf[0]['MATA_PELAJARAN']." Kelas ".$rekapPdf[0]['nama_kelas'].".pdf";
+        	$this->pdf->load_view('rekap_pdf',['holder'=>$rekapPdf]);
         }else{
             $this->response([
                 'status' => false,
